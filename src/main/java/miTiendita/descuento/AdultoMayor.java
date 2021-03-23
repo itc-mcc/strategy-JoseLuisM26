@@ -1,12 +1,16 @@
 package miTiendita.descuento;
 
+
+import miTiendita.venta.LineaDeDetalle;
 import miTiendita.venta.Venta;
 
 public class AdultoMayor implements IDesctoStrategy {
     @Override
     public float getDescto(Venta v) {
-        // TODO Auto-generated method stub
-        System.out.println("Sin descuento...");
-        return 0;
+        float descuento = 0;
+        for (LineaDeDetalle articulo: v.getLd()) {
+            descuento+= (articulo.getP().getPunit()*articulo.getCtd())*0.05;
+        }
+        return descuento;
     }    
 }
