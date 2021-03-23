@@ -25,11 +25,28 @@ public class Venta {
 
     public void addDescto()
     {
-        IDescto = new SinDescuento();
+        switch (diaSemana) {
+            case 1, 7 -> IDescto = new AdultoMayor();
+            case 2, 6 -> IDescto = new SinDescuento();
+            case 3 -> IDescto = new MenonitaDescuento();
+            case 4 -> IDescto = new FrutaDescuento();
+            case 5 -> IDescto = new EmbutidosLacteos();
+        }
+
     }
+
 
     public double getTotal()
     {
-        return 0;
+        double subTotal = 0;
+        double total = 0;
+        for (LineaDeDetalle articulo: ld) {
+         subTotal+= articulo.p.getPunit()*articulo.ctd;
+        }
+        return total =  (subTotal- IDescto.getDescto(this))+(subTotal-IDescto.getDescto(this))*(0.16);
+    }
+
+    public List<LineaDeDetalle> getLd() {
+        return ld;
     }
 }
