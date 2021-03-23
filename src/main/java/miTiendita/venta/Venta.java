@@ -35,9 +35,28 @@ public class Venta {
 
         }*/
         switch (diaSemana){
-            case 1,7:
+            case 1:
                 IDescto = new AdultoMayor();
                 break;
+            case 2:
+                IDescto = new SinDescuento();
+                break;
+            case 3:
+                IDescto = new MenonitaDescuento();
+                break;
+            case 4:
+                IDescto = new FrutaDescuento();
+                break;
+            case 5:
+                IDescto = new EmbutidosLacteos();
+                break;
+            case 6:
+                IDescto = new SinDescuento();
+                break;
+            case 7:
+                IDescto =  new AdultoMayor();
+                break;
+
         }
 
     }
