@@ -10,8 +10,22 @@ public class EmbutidosLacteos implements IDesctoStrategy {
         float descuento = 0;
         for (LineaDeDetalle articulo: v.getLd()) {
             switch (articulo.getP().getClave()) {
-                case 1, 2, 3, 5 -> descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.15;
-                case 4 -> descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.05;
+
+                case 1:
+                    descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.15;
+                    break;
+                case 2:
+                    descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.15;
+                    break;
+                case 3:
+                    descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.15;
+                    break;
+                case 5:
+                    descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.15;
+                    break;
+                case 4:
+                    descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.05;
+                    break;
             }
 
         }

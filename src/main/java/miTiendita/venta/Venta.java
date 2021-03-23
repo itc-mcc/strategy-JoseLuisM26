@@ -25,15 +25,6 @@ public class Venta {
 
     public void addDescto()
     {
-       /* switch (diaSemana) {
-            case 1, 7 -> IDescto = new AdultoMayor();
-            case 2, 6 -> IDescto = new SinDescuento();
-            case 3 -> IDescto = new MenonitaDescuento();
-            case 4 -> IDescto = new FrutaDescuento();
-            case 5 -> IDescto = new EmbutidosLacteos();
-
-
-        }*/
         switch (diaSemana){
             case 1:
                 IDescto = new AdultoMayor();

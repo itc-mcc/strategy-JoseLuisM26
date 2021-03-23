@@ -10,7 +10,13 @@ public class FrutaDescuento implements IDesctoStrategy {
         float descuento = 0;
         for (LineaDeDetalle articulo: v.getLd()) {
             switch (articulo.getP().getClave()) {
-                case 6, 7 -> descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.15;
+                case 6:
+                    descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.15;
+                    break;
+                case 7:
+                    descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.15;
+                    break;
+
             }
 
         }

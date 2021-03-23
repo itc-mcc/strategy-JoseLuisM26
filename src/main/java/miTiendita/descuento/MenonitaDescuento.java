@@ -10,7 +10,16 @@ public class MenonitaDescuento implements IDesctoStrategy {
         float descuento = 0;
         for (LineaDeDetalle articulo: v.getLd()) {
             switch (articulo.getP().getClave()) {
-                case 1, 2, 3, 5 -> descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.10;
+                case 1:descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.10;
+                    break;
+                case 2:descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.10;
+                    break;
+                case 3:descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.10;
+                    break;
+                case 5:descuento += (articulo.getP().getPunit() * articulo.getCtd()) * 0.10;
+                    break;
+
+
             }
 
         }
